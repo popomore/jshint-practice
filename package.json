@@ -1,0 +1,9 @@
+{
+  "name": "jshint-practice",
+  "devDependencies": {
+    "jshint": "*"
+  },
+  "scripts": {
+    "test": "jshint ."
+  }
+}

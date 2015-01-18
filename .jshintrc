@@ -1,0 +1,80 @@
+{
+  // 2 空格缩进
+  "indent": 2,
+  "smarttabs": true,
+
+  // 变量在使用前必须先声明，废弃的变量要及时清理掉
+  "latedef": "nofunc",
+  "undef": true,
+  "unused": true,
+
+  // 行尾不要有空格
+  "trailing": true,
+
+  // 在行尾使用逗号，而非行首
+  "laxcomma": false,
+
+  // 语句块必须使用大括号包裹
+  "curly": true,
+
+  // 判断相等使用 ===，接受 `== null`
+  "eqeqeq": true,
+  "eqnull": true,
+
+  // 不限制是否使用分号
+  "asi": true,
+
+  // 支持 `if (foo = bar) {}` 这样的写法
+  "boss": true,
+
+  // 支持 `options || (options = {})` 这样的写法
+  "expr": true,
+
+  // 同时支持 `hash['key']` 和 `hash.key`
+  "sub": true,
+
+  /*
+    Self
+  */
+
+  // new 之后的需要首字母大写
+  "newcap": true,
+
+  // 引号保持一致
+  "quotmark": true,
+
+  // 循环中函数的 bug
+  "loopfunc": true,
+
+  "lastsemic": true,
+  "laxbreak": true,
+  "funcscope": true,
+
+  /*
+    Environments
+  */
+
+  "browser": true,
+  "nonstandard": true,
+  "jquery": true,
+  "devel": true,
+  "node": true,
+  "esnext": true,
+
+  /*
+    Custom Global
+  */
+
+  "globals": {
+    // Mocha
+    "describe": false,
+    "xdescribe": false,
+    "it": false,
+    "xit": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    "define": false
+  }
+}
