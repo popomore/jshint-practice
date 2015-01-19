@@ -51,6 +51,8 @@ TODO：迁移以下配置 trailing, smarttabs, laxbreak, laxcomma, quotmark, ind
 
 ## 配置说明
 
+See [example](https://github.com/popomore/jshint-practice/blob/master/example)
+
 ## indent
 
 ```
@@ -102,7 +104,7 @@ new object();
 
 ```
 {
-  "curly": false
+  "curly": true
 }
 ```
 
@@ -227,11 +229,11 @@ location.href = 'http://github.com';
 
 ```
 {
-  "boss": true
+  "boss": false
 }
 ```
 
-允许判断中赋值
+禁止在条件判断中赋值
 
 ```
 // Good
@@ -277,7 +279,7 @@ options || (options = {})
 
 ```
 {
-  "loopfunc": true,
+  "loopfunc": false,
 }
 ```
 
