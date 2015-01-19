@@ -43,6 +43,12 @@ function main(a, b) {
 document.createElement()
 ```
 
+## 代码风格
+
+使用 jscs，jshint [已经把很多配置删除了](https://github.com/jshint/jshint/issues/1339)。
+
+TODO：迁移以下配置 trailing, smarttabs, laxbreak, laxcomma, quotmark, indent,
+
 ## 配置说明
 
 ## indent
@@ -181,16 +187,6 @@ location.href = 'http://github.com';
 
 如果变量定义但未使用会报错，便于优化代码，尤其在 node 中可以删除很多无用的依赖。
 
-## laxbreak
-
-
-```
-{
-  "laxbreak": true
-}
-```
-
-
   
 ## laxcomma
 
@@ -285,24 +281,112 @@ options || (options = {})
 }
 ```
 
-  // 循环中函数的 bug
-  "loopfunc": true,
+循环中的函数要特别注意，可避免使用错误的引用
+
+
+```
+// Good
+var nums = [];
+
+for (var i = 0; i < 10; i++) {
+  (function (i) {
+    nums[i] = function (j) {
+        return i + j;
+    };
+  }(i));
+}
+
+// Bad
+var nums = [];
+
+for (var i = 0; i < 10; i++) {
+  nums[i] = function (j) {
+    return i + j;
+  };
+}
+
+nums[0](2); // Prints 12 instead of 2
+```
 
 ## lastsemic
 
-  "lastsemic": true,
+```
+{
+  "lastsemic": true
+}
+```
 
+在单行的情况下，最后一个分号可以省略，当然是在 `asi` 开启的情况下
 
+```
+// Good
+(function() { return 'Anton' }());
+
+// Bad
+(function() {
+  return 'Anton'
+}());
+```
 
 ## funcscope
 
-  "funcscope": true,
+```
+{
+  "funcscope": false
+}
+```
 
+Javascript 虽然只有两个作用域，但为了代码可读性更高，尽量把块都当成一个作用域。
 
+```
+// Good
+function test() {
+  var x;
+
+  if (true) {
+    x = 0;
+  }
+
+  x += 1;
+}
+
+// Bad
+function test() {
+  if (true) {
+    var x = 0;
+  }
+
+  x += 1;
+}
+```
+
+ES6 可以直接使用 let http://es6rocks.com/2014/08/what-you-need-to-know-about-block-scope-let/
 
 ## esnext
 
+```
+{
+  "esnext": true,
+}
+```
+
+支持 es6，这里不多说了
+
 ## noyield
+
+```
+{
+  "noyield": true,
+}
+```
+
+在 generator 中可以没有 yield
+
+```
+function* g() {
+  return '';
+}
+```
 
 ## env
 
@@ -326,5 +410,4 @@ options || (options = {})
   }
 }
 ```
-
 
