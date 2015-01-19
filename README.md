@@ -16,7 +16,7 @@
 }
 ```
 
-添加 .jshintrc 配置规则(规则如下)，添加 .jshintignore 忽略某些目录(配置文件比命令行好用)。
+添加 [.jshintrc](https://github.com/popomore/jshint-practice/blob/master/.jshintrc) 配置规则(规则如下)，添加 [.jshintignore](https://github.com/popomore/jshint-practice/blob/master/.jshintignore) 忽略某些目录(配置文件比命令行好用)。
 
 运行校验代码
 
@@ -187,7 +187,7 @@ location.href = 'http://github.com';
 
 如果变量定义但未使用会报错，便于优化代码，尤其在 node 中可以删除很多无用的依赖。
 
-  
+
 ## laxcomma
 
 ```
@@ -272,7 +272,7 @@ options || (options = {})
 ```
 
 引号保持一致，单双都可，也可以单独设置
-  
+
 ## loopfunc
 
 ```
@@ -390,7 +390,7 @@ function* g() {
 
 ## env
 
-会根据不同的环境提前定义一些[环境变量](http://jshint.com/docs/options/#environments) 
+会根据不同的环境提前定义一些[环境变量](http://jshint.com/docs/options/#environments)
 
 - node: process, …
 - browser: document, navigator, …
