@@ -6,7 +6,7 @@ if (foo) {
   console.log(foo);
 }
 
-// Bad
+// Good, but no recommanded
 if (foo = bar) {
   console.log(foo);
 }

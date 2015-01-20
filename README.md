@@ -235,14 +235,14 @@ location.href = 'http://github.com';
 
 ```
 {
-  "boss": false
+  "boss": true
 }
 ```
 
-禁止在条件判断中赋值
+在条件判断中允许赋值，**但不建议**
 
 ```
-// Good
+// Good, but no recommanded
 if (foo = bar) {}
 ```
 

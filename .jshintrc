@@ -10,7 +10,7 @@
   "unused": true,
   "laxcomma": false,
   "asi": false,
-  "boss": false,
+  "boss": true,
   "expr": true,
   "sub": true,
   "quotmark": "single",
