@@ -25,6 +25,12 @@ npm install
 npm jshint
 ```
 
+## 编辑器
+
+### Sublime
+
+安装 [SublimeLinter](http://sublimelinter.readthedocs.org/en/latest/installation.html) 和 [SublimeLinter-jshint](https://github.com/SublimeLinter/SublimeLinter-jshint#installation)。
+
 ## 行内配置
 
 有时某些代码希望覆盖全局配置，那么行内配置会帮到你。
