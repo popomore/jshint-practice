@@ -13,7 +13,7 @@
   "boss": true,
   "expr": true,
   "sub": true,
-  "quotmark": "single",
+  "quotmark": true,
   "loopfunc": false,
   "lastsemic": true,
   "funcscope": false,

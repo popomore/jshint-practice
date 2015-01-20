@@ -1,5 +1,5 @@
-// Good
+// Good, recommand
 console.log('single');
 
-// Bad
+// Good, but can't mixed with single quote
 console.log("double");

@@ -275,11 +275,19 @@ options || (options = {})
 
 ```
 {
-  "quotmark": "single",
+  "quotmark": true,
 }
 ```
 
-引号保持一致，单双都可，也可以单独设置
+引号需保持一致，单双都可，**建议在 js 中使用单引号，json 使用双引号**
+
+如使用单引号设置为
+
+```
+{
+  "quotmark": "single",
+}
+```
 
 ## loopfunc
 
