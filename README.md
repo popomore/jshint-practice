@@ -11,7 +11,7 @@
     "jshint": "*"
   },
   "scripts": {
-    "jshint": "jshint ."
+    "test": "jshint ."
   }
 }
 ```
@@ -22,7 +22,7 @@
 
 ```
 npm install
-npm jshint
+npm test
 ```
 
 ## 编辑器
