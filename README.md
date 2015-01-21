@@ -297,21 +297,11 @@ options || (options = {})
 }
 ```
 
-循环中的函数要特别注意，可避免使用错误的引用
+不应该在循环中的定义函数，不然可能造成错误的引用，请看下面的解释
 
+https://jslinterrors.com/dont-make-functions-within-a-loop
 
 ```
-// Good
-var nums = [];
-
-for (var i = 0; i < 10; i++) {
-  (function (i) {
-    nums[i] = function (j) {
-        return i + j;
-    };
-  }(i));
-}
-
 // Bad
 var nums = [];
 
@@ -322,6 +312,30 @@ for (var i = 0; i < 10; i++) {
 }
 
 nums[0](2); // Prints 12 instead of 2
+
+// Worked, but also Bad
+var nums = [];
+
+for (var i = 0; i < 10; i++) {
+  (function (i) {
+    nums[i] = function (j) {
+        return i + j;
+    };
+  }(i));
+}
+
+// Good
+var nums = [];
+
+for (var i = 0; i < 10; i++) {
+  nums[i] = createFunc(i);
+}
+
+function createFunc(i) {
+  return function (j) {
+    return i + j;
+  };
+}
 ```
 
 ## lastsemic
@@ -396,7 +410,7 @@ ES6 可以直接使用 let http://es6rocks.com/2014/08/what-you-need-to-know-abo
 }
 ```
 
-在 generator 中可以没有 yield
+在 generator 中可以没有 yield
 
 ```
 function* g() {
