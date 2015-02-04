@@ -2,7 +2,7 @@
   "indent": 2,
   "latedef": "nofunc",
   "newcap": true,
-  "curly": true,
+  "curly": false,
   "eqeqeq": true,
   "eqnull": true,
   "strict": true,

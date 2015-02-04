@@ -110,7 +110,7 @@ new object();
 
 ```
 {
-  "curly": true
+  "curly": false
 }
 ```
 
