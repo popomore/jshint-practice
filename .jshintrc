@@ -19,6 +19,7 @@
   "funcscope": false,
   "esnext": true,
   "noyield": true,
+  "validthis": false,
   "browser": true,
   "nonstandard": true,
   "jquery": true,

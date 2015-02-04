@@ -418,6 +418,34 @@ function* g() {
 }
 ```
 
+## validthis
+
+```
+{
+  "validthis": false,
+}
+```
+
+避免在 function 作用域中使用 this，因为一般情况 this 是指向全局域的。
+
+```
+// Bad
+function named() {
+  this.call();
+}
+```
+
+但也有例外，比如使用了 bind，这时使用 this 是正确的。
+
+```
+function named() {
+  /* jshint validthis:true */
+  this.call();
+}.bind(ctx)
+```
+
+但这个很容易误判，因为很多匿名函数的上下文是无法探测的，要求不高的可以设成 true。
+
 ## env
 
 会根据不同的环境提前定义一些[环境变量](http://jshint.com/docs/options/#environments)
